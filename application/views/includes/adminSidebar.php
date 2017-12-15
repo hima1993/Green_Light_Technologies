@@ -59,8 +59,37 @@
 
 
 
+<!-- --------------------services------------------------- -->
+                        <li class="treeview">
 
-                        <li><a href="<?php echo base_url()?>index.php/ItemsController/adminAddService">Add Other Services</a></li>
+
+                        <a href="#"> <span>Services </span>
+                        <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+                    </a>
+                       
+                        
+
+
+                            <ul class="treeview-menu">
+
+                                 <li><a href="<?php echo base_url()?>index.php/ItemsController/adminAddService">Add Other Services</a></li>
+                                 <li><a href="<?php echo base_url()?>index.php/ServicesController/MngAddservices">Manage Services</a></li>
+                                
+
+
+                            </ul>
+
+                        </li>
+
+
+<!------------------------finished services---------------------- -->
+
+
+
+
+                       
 
 
                      
