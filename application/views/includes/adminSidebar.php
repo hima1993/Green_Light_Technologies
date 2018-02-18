@@ -18,7 +18,7 @@
                     </a>
                     <ul class="treeview-menu">
                         <li><a href="<?php echo base_url()?>index.php/Users/adminAddUser">Add User</a></li>
-                        <li><a href="<?php echo base_url()?>index.php/Users/GoUserMng">Manage Users</a></li>
+                        
                     </ul>
                 </li>
         <!..User Management section..>
@@ -59,8 +59,34 @@
 
 
 
+                         <li class="treeview">
 
-                        <li><a href="<?php echo base_url()?>index.php/ItemsController/adminAddService">Add Other Services</a></li>
+
+                        <a href="#"> <span>Other Services</span>
+                        <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+                    </a>
+                       
+                        
+
+
+                            <ul class="treeview-menu">
+
+                                <li><a href="<?php echo base_url()?>index.php/ItemsController/adminAddService">Add Other Services</a></li>
+                                 <li><a href="<?php echo base_url()?>index.php/ItemsController/MngAddservice">Manage Other Services</a></li>
+                                
+
+
+                            </ul>
+
+                        </li>
+
+
+
+
+
+                        
 
 
                      
@@ -70,6 +96,19 @@
                     </ul>
                 </li>
         <!../Items Management Section..>
+
+
+
+        <!..Customer FeedBack Section..>
+                <li class="treeview">
+                    <a href="<?php echo base_url()?>index.php/Other/adminFeed" ><i class="fa fa-link"></i> <span>Customer FeedBacks</span>
+                      
+                </i>
+              </span>
+                    </a>
+            
+                </li>
+        <!../Customer FeedBack Section....>
 
         
 

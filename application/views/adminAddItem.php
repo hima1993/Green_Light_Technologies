@@ -4,7 +4,7 @@
 
 <div class="content-wrapper">
 
-<!-- Content Header (Page header) -->
+    <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
             Add Item
@@ -12,13 +12,13 @@
         </h1>
 
         <ol class="breadcrumb">
-            <li><a href="<?php echo base_url()?>/index.php/welcome"><i class="fa fa-dashboard"></i> Home</a></li>            
+            <li><a href="<?php echo base_url()?>/index.php/welcome"><i class="fa fa-dashboard"></i> Home</a></li>
             <li class="active">Add Item</li>
         </ol>
     </section>
 
 
-<section class="content">
+    <section class="content">
         <div class="row">
             <!-- left column -->
             <div class="col-xs-12 col-lg-12">
@@ -32,29 +32,29 @@
 
                     <?php echo form_open_multipart('ItemsController/AddItems'); ?>
 
-                    
-                        <div class="box-body">
+
+                    <div class="box-body">
 
 
 
 
                         <div class="col-md-12">
 
-                           <!--  <div class="col-sm-4 col-xs-12">
-                              <div class="form-group">
-                                    <label for="empId">Employee ID</label>
-                                    <input type="text" class="form-control"  name="empId" placeholder="Employee ID" required>
-                                </div>
-                            </div> -->
+                            <!--  <div class="col-sm-4 col-xs-12">
+                               <div class="form-group">
+                                     <label for="empId">Employee ID</label>
+                                     <input type="text" class="form-control"  name="empId" placeholder="Employee ID" required>
+                                 </div>
+                             </div> -->
 
 
 
 
 
 
-                          <div class="col-md-4">
+                            <div class="col-md-4">
 
-                             <div class="form-group">
+                                <div class="form-group">
 
                                     <label>Item Category</label>
                                     <select class="form-control" id="ItemCategory" name="ItemCategory" required>
@@ -65,92 +65,92 @@
 
                                     </select>
 
-                              </div>
+                                </div>
 
 
-                          </div>
+                            </div>
 
 
 
                             <div class="col-md-4">
-                                 <div class="form-group">
-                                        <label for="inputItemId" >Item Name</label>
-                                        <input type="dropdown" class="form-control" name="itemName" placeholder="Item Name" required="">
-                                  </div>
+                                <div class="form-group">
+                                    <label for="inputItemId" >Item Name</label>
+                                    <input type="dropdown" class="form-control" name="itemName" placeholder="Item Name" required="">
+                                </div>
                             </div>
 
 
 
-                             <div class="col-md-4">
-                                 <div class="form-group">
-                                        <label for="inputItemName" >Item Price</label>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="inputItemName" >Item Price</label>
 
-                                        <input type="text" class="form-control" name="itemPrice" placeholder="Item Price">
+                                    <input type="text" min="0" value="0" step="0.01"  pattern="^\d+(?:\.\d{1,2}" title="should decimal" class="form-control" name="itemPrice" placeholder="Item Price" required>
 
-                                    </div>
+                                </div>
 
                             </div>
 
 
-                           
 
-                           
-                             
-                        
+
+
+
+
 
                         </div>
-                             
 
-                            
 
-                    
 
-                      
+
+
+
+
 
                         <div  class="col-md-12">
 
 
-                        
-                           
+
+
                             <div class="col-md-4">
                                 <label for="inputSupplier" >Supplier</label>
 
-                                        <input type="textbox" class="form-control" name ="supplier" placeholder="Supplier">
+                                <input type="textbox" class="form-control" name ="supplier" placeholder="Supplier">
                             </div>
 
-                            
 
-                            
+
+
 
 
                             <div class="col-md-4">
                                 <label for="inputAddress(1)" >Item Image</label>
 
-                                        <input type="file" class="form-control" name ="file_name" placeholder="Image">
-                                        <br>
+                                <input type="file" class="form-control" name ="file_name" placeholder="Image">
+                                <br>
                             </div>
 
 
                             <div class="col-md-4">
 
 
-                                 <div class="form-group">
-                                        <label for="inputItemName" >Item Details</label>
+                                <div class="form-group">
+                                    <label for="inputItemName" >Item Details</label>
 
-                                        <textarea type="textarea" style="height: 90px;" class="form-control" name="itemDetails" placeholder="Item Details">
+                                    <textarea type="textarea" style="height: 90px;" class="form-control" name="itemDetails" placeholder="Item Details" required>
                                         </textarea>
 
-                                    </div>
+                                </div>
                             </div>
 
 
 
 
 
-                            
 
 
-                            
+
+
                         </div>
 
 
@@ -159,15 +159,15 @@
                         <div class="col-xs-12 col-lg-12 col-sm-12">
 
 
-                             
+
 
                             <div class="col-xs-2">
-                                <button type="submit" class="btn btn-block btn-success" name="additem">Submit</button>
+                                <butto0n type="submit" class="btn btn-block btn-success" name="additem">Submit</button>
                             </div>
 
                         </div>
 
-                        </div>
+                    </div>
 
                     <?php echo form_close(); ?>
 
@@ -197,7 +197,7 @@
     $(function() {
         //Date picker
         $('#datepicker').datepicker({
-          autoclose: true
+            autoclose: true
         })
     })
 

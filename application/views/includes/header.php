@@ -47,7 +47,27 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo base_url()?>template/themes/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo base_url()?>template/themes/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="<?php echo base_url()?>template/themes/images/ico/apple-touch-icon-57-precomposed.png">
-	<style type="text/css" id="enject"></style>
+	<style type="text/css" id="enject">
+
+
+#autoSuggestionsList > li {
+    background: none repeat scroll 0 0 #F3F3F3;
+    border-bottom: 1px solid #E3E3E3;
+    list-style: none outside none;
+    padding: 3px 15px 3px 15px;
+    text-align: left;
+}
+
+#autoSuggestionsList > li a { color: #800000; }
+
+.auto_list {
+    border: 1px solid #E3E3E3;
+    border-radius: 5px 5px 5px 5px;
+    position: absolute;
+}
+		
+
+	</style>
   </head>
 <body >
 <div id="header" style="background-color: #D5F2CD;">
@@ -57,45 +77,56 @@
 	</div>
 	<div class="span6">
 	<div class="pull-right">
-		<a href="product_summary.html"><span class="">Fr</span></a>
-		<a href="product_summary.html"><span class="">Es</span></a>
-		<span class="btn btn-mini">En</span>
-		<a href="product_summary.html"><span>&pound;</span></a>
-		<span class="btn btn-mini">$155.00</span>
-		<a href="product_summary.html"><span class="">$</span></a>
-		<a href="product_summary.html"><span class="btn btn-mini btn-primary"><i class="icon-shopping-cart icon-white"></i> [ 3 ] Itemes in your cart </span> </a> 
+		
+		<a href="#"><span onclick="showCart(this);" class="btn btn-mini btn-primary"><i class="icon-shopping-cart icon-white"></i> Itemes in your cart </span> </a> 
 	</div>
 	</div>
 </div>
 <!-- Navbar ================================================== -->
-<div id="logoArea" class="navbar">
+<div id="logoArea" class="navbar" >
 <a id="smallScreen" data-target="#topMenu" data-toggle="collapse" class="btn btn-navbar">
 	<span class="icon-bar"></span>
 	<span class="icon-bar"></span>
 	<span class="icon-bar"></span>
 </a>
-  <div class="navbar-inner">
+  <div class="navbar-inner" >
     <a class="brand" href="<?php echo base_url()?>index.php"><img src="<?php echo base_url()?>template/themes/images/gee.png" alt="Bootsshop"/></a>
-		<form class="form-inline navbar-search" method="post" action="products.html" >
-		<input placeholder="Search For anything.." class="srchTxt" type="text" />
-		  <select class="srchTxt">
-			<option>All</option>
-			<option>LED SIGN BOARDS</option>
-			<option>CAR AUDIO SYSTEMS </option>
-			<option>CCTV CAMERA SYSTEMS </option>
-			<option>VEHICLE SECURITY SYSTEMS </option>
-			<option>HOUSE WIRING SERVICES</option>
-			<option>OTHER ELECTRONIC ACCESSORIES</option>
+		<form  class="form-inline navbar-search" method="post" action="<?php echo base_url()?>index.php/ItemsController/searchGo" >
+
+		<div style="position: relative;">
+		<input name="search_data" id="search_data" type="text" onkeyup="ajaxSearch();" placeholder="Search For anything.."  type="text" />
+
+		<div id="suggestions"  >
+	         <div id="autoSuggestionsList" style="position:absolute;z-index:201;"></div>
+	     </div>
+
+	 </div>
+
+
+
+
+		  <select name="items" class="srchTxt">
+			
+			<option value="LED SIGN BOARDS">LED SIGN BOARDS</option>
+			<option value="CAR AUDIO SYSTEMS">CAR AUDIO SYSTEMS </option>
+			<option value="CCTV CAMERA SYSTEMS">CCTV CAMERA SYSTEMS </option>
+			<option value="VEHICLE SECURITY SYSTEMS">VEHICLE SECURITY SYSTEMS </option>
+			
 
 		</select> 
 		  <button type="submit" id="submitButton" class="btn btn-primary">Go</button>
     </form>
+
+
+
+
+		
     <ul id="topMenu" class="nav pull-right">
-	 <li class=""><a href="special_offer.html">Specials Offer</a>
+	 <li class=""><a href="<?php echo base_url()?>index.php/ItemsController/Gospecial">Specials Offer</a>
 
 	
 	 </li>
-	 <li class=""><a href="<?php echo base_url()?>index.php/Other/GoDelivery">Delivery</a></li>
+	 <li  onclick="showfeedback(this);" class=""><a >FeedBack</a></li>
 	 <li class=""><a href="<?php echo base_url()?>index.php/Other/GoAbout">About Us</a></li>
 	 <li class="">
 	 <?php 
@@ -150,6 +181,8 @@
 			 </div>
 		</td>
 
+
+
 		<td>
 
 
@@ -197,5 +230,9 @@
     </ul>
   </div>
 </div>
+
+
 </div>
 </div>
+
+

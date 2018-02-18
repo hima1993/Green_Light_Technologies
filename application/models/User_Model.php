@@ -4,15 +4,15 @@ class User_Model extends CI_Model{
 
 
 
-	public function userAuth($userInfo){
+    public function userAuth($userInfo){
 
-		$this->db->select('email,password');
-		$result = $this->db->get_where('system_users',$userInfo);
+        $this->db->select('email,password');
+        $result = $this->db->get_where('system_users',$userInfo);
 
 
 
-		if($result->num_rows == 1){
-			$currentUser = $result->result_array()[0];
+        if($result->num_rows == 1){
+            $currentUser = $result->result_array()[0];
 
             $columnArray = array('user_id');
 
@@ -23,47 +23,47 @@ class User_Model extends CI_Model{
 
             $data = $this->getData($tablename='user',$columns_arr =$columnArray , $where_arr =$currentUser);
             //return true;
-            
-		return  $data;
-		}
-		else{
-			return false;
-		}
-	}
+
+            return  $data;
+        }
+        else{
+            return false;
+        }
+    }
 
 
-	public function verifylog($username,$password){
+    public function verifylog($username,$password){
 
 
-	    $this->db->where('email', $username);
-    	$this->db->where('password', $password);
-    	$q = $this->db->get('system_users');
-
-       
+        $this->db->where('email', $username);
+        $this->db->where('password', $password);
+        $q = $this->db->get('system_users');
 
 
-				
-		if($q->num_rows() == 1){
 
 
-             return $q->result();
 
-		
-
-		
-		}
-
-		else{
-
-			return false;
-
-		}
-	}
-
-	public function getData($tablename = '', $columns_arr = array(), $where_arr = array(), $limit = 0, $offset = 0, $orderby = array()) {
+        if($q->num_rows() == 1){
 
 
-		$limit = ($limit == 0) ? Null : $limit;
+            return $q->result();
+
+
+
+
+        }
+
+        else{
+
+            return false;
+
+        }
+    }
+
+    public function getData($tablename = '', $columns_arr = array(), $where_arr = array(), $limit = 0, $offset = 0, $orderby = array()) {
+
+
+        $limit = ($limit == 0) ? Null : $limit;
 
         if (!empty($columns_arr)) {
             $this->db->select(implode(',', $columns_arr), FALSE);
@@ -93,13 +93,13 @@ class User_Model extends CI_Model{
                 }
                 if (strlen($orderbyString) > 2) {
                     $orderbyString = substr($orderbyString, 0, strlen($orderbyString) - 2);
-					var_dump($orderbyString);
+                    var_dump($orderbyString);
                 }
                 $this->db->order_by($orderbyString);
             }
 
             $query = $this->db->get();
-             
+
             return $query->result();
         }
     }
@@ -120,7 +120,7 @@ class User_Model extends CI_Model{
 
 
     public function deleteData($tblName,$where){
-      return $this->db->delete($tblName,$where);
+        return $this->db->delete($tblName,$where);
     }
 
 
@@ -131,11 +131,37 @@ class User_Model extends CI_Model{
 
 
             $this->db->update($tablename, $data_arr, $where_arr);
-           
+
         } catch (Exception $err) {
 
             return $err->getMessage();
         }
+    }
+
+
+
+    public function getCustomerIdbyUserId($id){
+
+        $res = $this->db->query("SELECT customer_id as customer_id FROM customer WHERE system_users_user_id = $id")->row()->customer_id;
+
+
+        return $res;
+
+
+
+
+    }
+
+
+    public function getmaxUserId(){
+
+
+        $res=$this->db->query("SELECT MAX(user_id) as uid FROM system_users ")->row()->uid;
+
+        return $res;
+
+
+
     }
 
 }

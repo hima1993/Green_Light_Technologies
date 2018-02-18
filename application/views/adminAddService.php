@@ -4,7 +4,7 @@
 
 <div class="content-wrapper">
 
-<!-- Content Header (Page header) -->
+    <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
             Add Item
@@ -12,13 +12,13 @@
         </h1>
 
         <ol class="breadcrumb">
-            <li><a href="<?php echo base_url()?>/index.php/welcome"><i class="fa fa-dashboard"></i> Home</a></li>            
+            <li><a href="<?php echo base_url()?>/index.php/welcome"><i class="fa fa-dashboard"></i> Home</a></li>
             <li class="active">Add Item</li>
         </ol>
     </section>
 
 
-<section class="content">
+    <section class="content">
         <div class="row">
             <!-- left column -->
             <div class="col-xs-12 col-lg-12">
@@ -32,46 +32,31 @@
 
                     <?php echo form_open_multipart('ItemsController/addService'); ?>
 
-                    
-                        <div class="box-body">
+
+                    <div class="box-body">
 
 
 
 
                         <div class="col-md-12">
 
-                           <!--  <div class="col-sm-4 col-xs-12">
-                              <div class="form-group">
-                                    <label for="empId">Employee ID</label>
-                                    <input type="text" class="form-control"  name="empId" placeholder="Employee ID" required>
-                                </div>
-                            </div> -->
-
-
-
-
-
-
-                          
-
-
 
                             <div class="col-md-4">
-                                 <div class="form-group">
-                                        <label for="inputItemId" >Service Name</label>
-                                        <input type="dropdown" class="form-control" name="itemName" placeholder="Item Name" required="">
-                                  </div>
+                                <div class="form-group">
+                                    <label for="inputItemId" >Service Name</label>
+                                    <input type="dropdown" class="form-control" name="itemName" placeholder="Item Name" required="">
+                                </div>
                             </div>
 
 
 
-                             <div class="col-md-4">
-                                 <div class="form-group">
-                                        <label for="inputItemName" >Service Price</label>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="inputItemName" >Service Price</label>
 
-                                        <input type="text" class="form-control" name="itemPrice" placeholder="Item Price">
+                                    <input type="text" class="form-control" name="itemPrice" placeholder="Item Price" required>
 
-                                    </div>
+                                </div>
 
                             </div>
 
@@ -80,65 +65,65 @@
                             <div class="col-md-4">
                                 <label for="inputSupplier" >Service Provider</label>
 
-                                        <input type="textbox" class="form-control" name ="supplier" placeholder="Supplier">
+                                <input type="textbox" class="form-control" name ="supplier" placeholder="Supplier" required>
                             </div>
 
 
-                           
 
-                           
-                             
-                        
+
+
+
+
 
                         </div>
-                             
 
-                            
 
-                    
 
-                      
+
+
+
+
 
                         <div  class="col-md-12">
 
 
-                        
-                           
-                            
 
-                            
 
-                            
+
+
+
+
+
 
 
                             <div class="col-md-4">
                                 <label for="inputAddress(1)" >service Image</label>
 
-                                        <input type="file" class="form-control" name ="file_name" placeholder="Image">
-                                        <br>
+                                <input type="file" class="form-control" name ="file_name" placeholder="Image">
+                                <br>
                             </div>
 
 
                             <div class="col-md-4">
 
 
-                                 <div class="form-group">
-                                        <label for="inputItemName" >service Details</label>
+                                <div class="form-group">
+                                    <label for="inputItemName" >service Details</label>
 
-                                        <textarea type="textarea" style="height: 90px;" class="form-control" name="servDetails" placeholder="Item Details">
+                                    <textarea type="textarea" style="height: 90px;" class="form-control" name="servDetails" placeholder="Item Details" required>
                                         </textarea>
 
-                                    </div>
+                                </div>
                             </div>
 
 
 
 
 
-                            
 
 
-                            
+
+
                         </div>
 
 
@@ -147,7 +132,7 @@
                         <div class="col-xs-12 col-lg-12 col-sm-12">
 
 
-                             
+
 
                             <div class="col-xs-2">
                                 <button type="submit" class="btn btn-block btn-success" name="additem">Submit</button>
@@ -155,7 +140,7 @@
 
                         </div>
 
-                        </div>
+                    </div>
 
                     <?php echo form_close(); ?>
 
@@ -185,7 +170,7 @@
     $(function() {
         //Date picker
         $('#datepicker').datepicker({
-          autoclose: true
+            autoclose: true
         })
     })
 
